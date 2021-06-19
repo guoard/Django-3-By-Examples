@@ -16,18 +16,15 @@ spec:
 kind: ExternalService
 name: django-3-by-examples
 spec:
-  image: "guoardir/django-3-by-examples:${IMAGE_VERSION}"
   image_pull_policy: Always
-  env:
-    - name: POSTGRES_DB
-      value: postgres
-      hidden: true
-    - name: POSTGRES_USER
-      value: postgres
-      hidden: true
-    - name: POSTGRES_PASSWORD
-      value: password
-      hidden: true
-    - name: POSTGRES_HOST
-      value: db
-      hidden: true
+  port: 80
+  source:
+    context: .
+    media_path: media
+    project_type: django
+    python_version: '3.8'
+    static_path: static_root
+    wsgi: A.wsgi
+  volume_mounts:
+  - mount_path: /usr/src/app/media
+    sub_path: Django-3-By-Examples/media
