@@ -29,3 +29,6 @@ jobs:
         docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
         docker build -t guoardir/django-3-by-examples:$VERSION .
         docker push guoardir/django-3-by-examples:$VERSION
+
+        COLLECT_ERROR=1 fandogh login --username $FANDOGH_USERNAME --password $FANDOGH_PASSWORD
+        fandogh service apply -f fandogh.yml -p IMAGE_VERSION=$VERSION

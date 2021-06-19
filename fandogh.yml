@@ -16,7 +16,7 @@ spec:
 kind: ExternalService
 name: django-3-by-examples
 spec:
-  image: "guoardir/django-3-by-examples:latest"
+  image: "guoardir/django-3-by-examples:${IMAGE_VERSION}"
   image_pull_policy: Always
   env:
     - name: POSTGRES_DB
