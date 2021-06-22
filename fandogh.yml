@@ -1,18 +1,3 @@
-kind: ManagedService
-name: db
-spec:
-  service_name: postgresql
-  version: 10.16
-  parameters:
-    - name: adminer_enabled
-      value: true
-    - name: postgres_password
-      value: password
-  resources:
-      memory: 200Mi
-
----
-
 kind: ExternalService
 name: django-3-by-examples
 spec:
@@ -24,7 +9,7 @@ spec:
     project_type: django
     python_version: '3.8'
     static_path: static_root
-    wsgi: A.wsgi
+    wsgi: config.wsgi
   volume_mounts:
   - mount_path: /usr/src/app/media
-    sub_path: Django-3-By-Examples/media
+    sub_path: django-3-by-examples/media
