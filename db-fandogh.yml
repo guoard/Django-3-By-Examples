@@ -7,6 +7,6 @@ spec:
     - name: adminer_enabled
       value: true
     - name: postgres_password
-      value: password
+      value: "${POSTGRES_PASSWORD}"
   resources:
       memory: 200Mi

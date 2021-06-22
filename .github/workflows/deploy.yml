@@ -22,7 +22,9 @@ jobs:
       env:
         FANDOGH_USERNAME: ${{ secrets.FANDOGH_USERNAME }}
         FANDOGH_PASSWORD: ${{ secrets.FANDOGH_PASSWORD }}
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         COLLECT_ERROR=1 fandogh login --username $FANDOGH_USERNAME --password $FANDOGH_PASSWORD
-        fandogh service apply -f db-fandogh.yml
-        fandogh source run
+        fandogh service apply -f db-fandogh.yml -p POSTGRES_PASSWORD
+        fandogh source run -p POSTGRES_PASSWORD -p SECRET_KEY
