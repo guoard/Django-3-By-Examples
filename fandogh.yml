@@ -17,11 +17,3 @@ spec:
   domains:
     - name: guoard.ir
     - name: www.guoard.ir
-
-  env:
-    - name: POSTGRES_PASSWORD
-      value: "${POSTGRES_PASSWORD}"
-      hidden: true
-    - name: SECRET_KEY
-      value: "${SECRET_KEY}"
-      hidden: true
