@@ -27,4 +27,4 @@ jobs:
       run: |
         COLLECT_ERROR=1 fandogh login --username $FANDOGH_USERNAME --password $FANDOGH_PASSWORD
         fandogh service apply -f db-fandogh.yml -p POSTGRES_PASSWORD
-        fandogh source run -p POSTGRES_PASSWORD -p SECRET_KEY
+        fandogh source run
