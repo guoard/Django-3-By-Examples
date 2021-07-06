@@ -133,7 +133,10 @@ dmypy.json
 Pipfile
 Pipfile.lock
 
-#migrations
+# migrations
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+# collectstatic files
+static_root/
